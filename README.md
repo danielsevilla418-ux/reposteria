@@ -155,7 +155,7 @@
   <!-- Sección de productos -->
   <section class="productos">
     <div class="producto">
-      <img src="brownies.jpg" alt="Brownies">
+     <img src="imagenes/producto1.jpg" alt="Producto 1">
       <h3>Brownies</h3>
       <p>$10.00 USD</p>
       <button onclick="hacerPedido('Brownies', '10')">🛒 Pedir por WhatsApp</button>
