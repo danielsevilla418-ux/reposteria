@@ -95,33 +95,7 @@
     © 2025 Repostería Celestial del Espíritu - Hecho con fe y dulzura 🕊
   </footer>
 
-  <!-- Script para enviar a WhatsApp -->
-  <script>
-    function hacerPedido(producto, precio, inputId) {
-      let nombre = document.getElementById("nombreCliente").value.trim();
-
-      if (nombre.toLowerCase() === "nosotros") {
-        alert("Más que postres somos un proyecto gobernados por el Espíritu Santo donde cada receta lleva un toque de fe.");
-        return;
-      }
-
-      if (nombre === "") {
-        alert("Por favor escribe tu nombre antes de hacer un pedido.");
-        return;
-      }
-
-      let cantidad = parseInt(document.getElementById(inputId).value, 10);
-      if (isNaN(cantidad) || cantidad <= 0) {
-        alert("Por favor ingresa una cantidad válida.");
-        return;
-      }
-
-      let total = (Number(precio) * cantidad).toFixed(2);
-      let mensaje = Hola, soy ${nombre} y quiero pedir ${cantidad} ${producto}(s) por un total de $${total} USD.;
-      let url = "https://wa.me/18323622303?text=" + encodeURIComponent(mensaje);
-      window.open(url, "_blank");
-    }
-  </script>
+  
 
 </body>
 </html>
