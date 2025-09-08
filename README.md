@@ -11,7 +11,7 @@
 
   <!-- Encabezado con logo e info -->
   <header>
-    <img src="imagenes/logo.jpg" alt="Logo de la repostería" />
+    <img src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-5f7c-61f5-a3d9-746b843d7676/raw?se=2025-09-08T02%3A16%3A32Z&sp=r&sv=2024-08-04&sr=b&scid=f9416992-5c82-5770-b145-ff5ed4ec4498&skoid=ec8eb293-a61a-47e0-abd0-6051cc94b050&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-07T13%3A25%3A30Z&ske=2025-09-08T13%3A25%3A30Z&sks=b&skv=2024-08-04&sig=51S8B3hvWq1vXqoBU%2BAzF9ltOGUD5UWap8cFguHEPbk%3D" alt="Logo de la repostería" />
     <h1>Repostería Celestial del Espíritu</h1>
     <p>Gobernados por el Espíritu Santo, elaboramos cada dulce con amor, fe y propósito. ¡Endulza tu vida con delicias que vienen del cielo!</p>
   </header>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="producto">
-      <img src="https://th.bing.com/th/id/R.5c7d3239af7a09b3d6031bd6e680522e?rik=2QuP0aDvSVyiPQ&pid=ImgRaw&r=0" alt="Flan">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.-MU0B1bX_IWyIWdEkjeQ5AHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Flan">
       <h3>Flan</h3>
       <p>$12.00 USD</p>
       <input type="number" id="cantidad-Flan" min="1" value="1">
@@ -73,7 +73,7 @@
     </div>
 
     <div class="producto">
-      <img src="https://houseofyumm.com/wp-content/uploads/2022/06/Fresas-Con-Crema-9.jpg" alt="Fresa con Crema">
+      <img src="https://tse1.explicit.bing.net/th/id/OIP.XIQsGM5dT6jg9T0Ujcd5yQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Fresa con Crema">
       <h3>Fresa con Crema</h3>
       <p>$11.00 USD</p>
       <input type="number" id="cantidad-Fresa" min="1" value="1">
@@ -122,6 +122,9 @@
       window.open(url, "_blank");
     }
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
