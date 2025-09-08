@@ -2,27 +2,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Repostería Celestial del Espíritu</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Encabezado con logo e info -->
+  <!-- Encabezado -->
   <header>
-    <img src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-5f7c-61f5-a3d9-746b843d7676/raw?se=2025-09-08T02%3A16%3A32Z&sp=r&sv=2024-08-04&sr=b&scid=f9416992-5c82-5770-b145-ff5ed4ec4498&skoid=ec8eb293-a61a-47e0-abd0-6051cc94b050&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-07T13%3A25%3A30Z&ske=2025-09-08T13%3A25%3A30Z&sks=b&skv=2024-08-04&sig=51S8B3hvWq1vXqoBU%2BAzF9ltOGUD5UWap8cFguHEPbk%3D" alt="Logo de la repostería" />
+    <img src="https://sdmntprcentralus.oaiusercontent.com/files/00000000-5f7c-61f5-a3d9-746b843d7676/raw?se=2025-09-08T02%3A16%3A32Z&sp=r&sv=2024-08-04&sr=b&scid=f9416992-5c82-5770-b145-ff5ed4ec4498&skoid=ec8eb293-a61a-47e0-abd0-6051cc94b050&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-07T13%3A25%3A30Z&ske=2025-09-08T13%3A25%3A30Z&sks=b&skv=2024-08-04&sig=51S8B3hvWq1vXqoBU%2BAzF9ltOGUD5UWap8cFguHEPbk%3D" alt="Logo" class="logo">
     <h1>Repostería Celestial del Espíritu</h1>
     <p>Gobernados por el Espíritu Santo, elaboramos cada dulce con amor, fe y propósito. ¡Endulza tu vida con delicias que vienen del cielo!</p>
   </header>
 
-  <!-- Campo para nombre del cliente -->
-  <div class="pedido-nombre">
+  <!-- Pedido -->
+  <section class="pedido">
     <h2>Haz tu pedido</h2>
-    <input type="text" id="nombreCliente" placeholder="Escribe tu nombre aquí" required>
-  </div>
+    <input type="text" id="nombreCliente" placeholder="Escribe tu nombre aquí">
+  </section>
 
-  <!-- Sección de productos -->
+  <!-- Productos -->
   <section class="productos">
     <div class="producto">
       <img src="https://tse2.mm.bing.net/th/id/OIP.JFSYvdTU1xhBxxHlzshM8gHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brownies">
@@ -81,7 +81,7 @@
     </div>
   </section>
 
-  <!-- Sección de contacto -->
+  <!-- Contacto -->
   <section class="contacto">
     <h2>Contáctanos</h2>
     <div class="iconos">
@@ -95,37 +95,46 @@
     © 2025 Repostería Celestial del Espíritu - Hecho con fe y dulzura 🕊
   </footer>
 
-  
+  <!-- Script WhatsApp -->
+  <script>
+    function hacerPedido(producto, precio, inputId) {
+      let nombre = document.getElementById("nombreCliente").value.trim();
+      if (nombre === "") { alert("Escribe tu nombre antes de hacer el pedido."); return; }
+      let cantidad = parseInt(document.getElementById(inputId).value);
+      if (isNaN(cantidad) || cantidad <= 0) { alert("Cantidad inválida."); return; }
+      let total = (precio * cantidad).toFixed(2);
+      let mensaje = `Hola, soy ${nombre} y quiero pedir ${cantidad} ${producto}(s) por un total de $${total} USD.`;
+      window.open("https://wa.me/18323622303?text=" + encodeURIComponent(mensaje), "_blank");
+    }
+  </script>
 
 </body>
 </html>
 
-</body>
-</html>
-style.css
+/* General */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
   background-color: #fff8f0;
   color: #5a3e36;
 }
 
+/* Encabezado */
 header {
-  background-color: #f9e3e3;
+  background: linear-gradient(135deg, #f9e3e3, #ffe0e0);
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
-header img {
-  width: 250px;
-  margin-bottom: 15px;
+header .logo {
+  width: 200px;
+  border-radius: 20px;
 }
 
 header h1 {
-  font-size: 2.8em;
-  margin: 10px 0;
+  font-size: 2.5em;
   color: #d16d6d;
+  margin: 15px 0;
 }
 
 header p {
@@ -134,47 +143,48 @@ header p {
   margin: 0 auto;
 }
 
-.pedido-nombre {
+/* Pedido */
+.pedido {
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
 }
 
-.pedido-nombre input {
-  padding: 10px;
+.pedido input {
+  padding: 12px;
   font-size: 1em;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  width: 250px;
-  margin-bottom: 20px;
+  width: 280px;
 }
 
+/* Productos */
 .productos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  gap: 30px;
   padding: 40px;
 }
 
 .producto {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .producto:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .producto img {
   width: 160px;
   height: 120px;
   object-fit: cover;
-  border-radius: 10px;
-  margin: 0 auto 15px;
-  display: block;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
 
 .producto h3 {
@@ -184,7 +194,7 @@ header p {
 
 .producto p {
   font-size: 1.1em;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .producto input {
@@ -192,14 +202,16 @@ header p {
   padding: 5px;
   margin-bottom: 10px;
   text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 .producto button {
   background-color: #d16d6d;
-  color: white;
+  color: #fff;
+  border: none;
   padding: 10px 20px;
   border-radius: 8px;
-  border: none;
   cursor: pointer;
   font-size: 1em;
   transition: background 0.3s;
@@ -209,10 +221,11 @@ header p {
   background-color: #b14f4f;
 }
 
+/* Contacto */
 .contacto {
   background-color: #fff;
-  padding: 40px 20px;
   text-align: center;
+  padding: 40px 20px;
 }
 
 .contacto h2 {
@@ -221,8 +234,7 @@ header p {
 }
 
 .iconos a {
-  display: inline-block;
-  margin: 10px 20px;
+  margin: 10px 15px;
   text-decoration: none;
   color: #5a3e36;
   font-weight: bold;
@@ -233,10 +245,10 @@ header p {
   color: #d16d6d;
 }
 
+/* Footer */
 footer {
-  background-color: #f3dcdc;
   text-align: center;
   padding: 20px;
-  font-size: 0.9em;
-  color: #8b6b65;
-}
+  background-color: #f3dcdc;
+ 
+
